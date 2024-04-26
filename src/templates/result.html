@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystal Suggestions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            color: #7d0049;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        p {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crystals for You !</h1>
+    <p>Based on your selections, we suggest the following crystals:</p>
+    <ul>
+        {% for crystal in crystals %}
+            <li style="background-color: rgba(125, 0, 73, {{ loop.revindex0 / loop.length + 0.3 }});">
+                {{ crystal }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

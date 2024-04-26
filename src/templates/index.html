@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystal Finder</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Crystal Finder Logo" >
+        <h2> Krystal Finder</h2>
+    </header>
+
+
+    <form action="/result" method="post" class="form" id="crystalForm">
+        <input type="hidden" name="growth">
+        <input type="hidden" name="healing">
+        <input type="hidden" name="colors">
+        <input type="hidden" name="animal">
+
+        <label class="question">Where do you want to see the most growth in your life right now?</label><br>
+        <div class="options">
+            <button type="button" name="growth" value="mental_health">Mental Health</button>
+            <button type="button" name="growth" value="career_growth">Career Growth</button>
+            <button type="button" name="growth" value="relationship">Relationship</button>
+        </div>
+
+        <label class="question">Where do you want to see healing?</label><br>
+        <div class="options">
+            <button type="button" name="healing" value="thrive_ability">My ability to thrive in difficult or stress situations</button>
+            <button type="button" name="healing" value="inner_self">My inner, spiritual self</button>
+            <button type="button" name="healing" value="identity_wellbeing">My sense of identity and well being</button>
+        </div>
+
+        <label class="question">What colors feel the most attractive to you right now?</label><br>
+        <div class="options">
+            <button type="button" name="colors" value="blues_reds_greens">Blues, reds, and greens</button>
+            <button type="button" name="colors" value="water_colors">Water colors like light blues, greens, teals, and whites</button>
+            <button type="button" name="colors" value="rainbow">Rainbow</button>
+            <button type="button" name="colors" value="earthy_colors">Earthy colors like reds, oranges, browns, and pinks</button>
+            <button type="button" name="colors" value="roses_pinks_greens">Roses, pinks, and greens</button>
+        </div>
+
+        <label class="question">What animal captures you?</label><br>
+        <div class="options">
+            <button type="button" name="animal" value="sea_turtle">Sea Turtle</button>
+            <button type="button" name="animal" value="blue_whale">Blue Whale</button>
+            <button type="button" name="animal" value="peacock">Peacock</button>
+            <button type="button" name="animal" value="lioness">Lioness</button>
+        </div>
+
+        <input type="submit" value="Submit" class="submit-btn">
+    </form>
+
+    <script>
+    const form = document.getElementById('crystalForm');
+
+        // Function to handle option selection
+        function handleOptionSelection(question, value) {
+            const hiddenInput = form.querySelector(`input[name="${question}"]`);
+            hiddenInput.value = value;
+
+            // Remove 'selected' class from all buttons in the same group
+            const buttons = document.querySelectorAll(`button[name="${question}"]`);
+            buttons.forEach(button => {
+                button.classList.remove('selected');
+            });
+
+            // Add 'selected' class to the clicked button
+            event.target.classList.add('selected');
+        }
+
+        // Add click event listeners to all buttons
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                const question = this.getAttribute('name');
+                const value = this.value;
+                handleOptionSelection(question, value);
+            });
+        });
+</script>
+
+</body>
+</html>
