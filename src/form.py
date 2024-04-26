@@ -2,7 +2,7 @@ from collections import Counter
 
 from flask import Flask, render_template, request
 
-app = Flask(__name__, static_url_path='/finder/static')
+app = Flask(__name__)
 
 # Dictionary of crystals based on user responses
 crystal_suggestions = {
