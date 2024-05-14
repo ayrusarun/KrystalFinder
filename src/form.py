@@ -6,21 +6,27 @@ app = Flask(__name__)
 
 # Dictionary of crystals based on user responses
 crystal_suggestions = {
-    'mental_health': {'Amethyst': 30},
-    'career_growth': {'Citrine': 2, 'Pyrite': 1, 'Green Aventurine': 3},
-    'relationship': {'Rose Quartz': 2, 'Rhodonite': 3, 'Emerald': 1},
-    'thrive_ability': {'Amethyst': 1, 'Smoky Quartz': 5},
-    'inner_self': {'Labradorite': 3, 'Selenite': 2, 'Moonstone': 1},
-    'identity_wellbeing': {'Carnelian': 2, 'Garnet': 1, 'Red Jasper': 3},
-    'blues_reds_greens': {'Amethyst': 3, 'Lepidolite': 1, 'Clear Quartz': 2},
-    'water_colors': {'Citrine': 2, 'Pyrite': 1, 'Green Aventurine': 3},
-    'rainbow': {'Rose Quartz': 1},
-    'earthy_colors': {'Black Tourmaline': 1, 'Smoky Quartz': 3, 'Obsidian': 2},
-    'roses_pinks_greens': {'Labradorite': 3, 'Selenite': 2, 'Moonstone': 1},
-    'sea_turtle': {'Amethyst': 5, 'Garnet': 1, 'Red Jasper': 3},
-    'blue_whale': {'Carnelian': 2, 'Tester': 1, 'Red Jasper': 3},
-    'peacock': {'Carnelian': 2, 'Garnet': 1, 'Red Jasper': 3},
-    'lioness': {'Carnelian': 2, 'Garnet': 1, 'Red Jasper': 3}
+    'health': {'Amethyst': 5, 'Clear Quartz': 5, },
+    'career': {'Citrine': 4, 'Pyrite': 5, 'Tiger eye': 4, 'Green Aventurine': 5},
+    'relationship': {'Rose Quartz': 5, 'Strawberry Quartz': 5 },
+    'personal_development': {'Lapiz lazuli': 3, 'Black Tourmaline': 3, 'Tiger eye': 6 },
+    'money': {'Citrine': 5, 'Pyrite': 5, 'Tiger eye': 4, 'Green Aventurine': 3},
+    'inner_peace': {'Aquamarine': 5, 'Clear Quartz': 5, 'Black Lava': 5, 'Rose Quartz': 5, 'Selenite': 4, 'Strawberry Quartz': 5},
+
+    'physical_healing': {'Amethyst': 5, 'Red Jasper': 5, 'Red Garnet': 5, 'Rose quartz': 3, 'Strawberry Quartz': 3 },
+    'mental_healing': {'Lapiz Lazuli': 5, 'Clear Quartz': 5, 'Amethyst': 5 , 'Howlite': 3 , 'Aquamarine': 4 },
+    'spiritual_healing': {'Selenite': 5, 'Black Tourmaline': 2, 'Clear Quartz': 5, 'Green Aventurine': 3 , 'Lapiz Lazuli': 3},
+
+    'blues_reds_greens': {'Amethyst': 3, 'Lapiz Lazuli': 5, 'Aquamarine': 5, 'Clear Quartz': 2},
+    'water_colors': {'Citrine': 2, 'Pyrite': 5, 'Green Aventurine': 3},
+    'rainbow': {'Rose Quartz': 1, 'Strawberry Quartz': 3, 'Green Aventurine': 1, 'Moonstone': 1, 'Amethyst': 3, 'Lapiz Lazuli': 5, 'Aquamarine': 5, 'Clear Quartz': 2 },
+    'earthy_colors': {'Black Tourmaline': 2, 'Black Lava': 3, 'Pyrite': 3, 'Smoky Quartz': 3, 'Black Obsidian': 2, 'Tiger eye': 2},
+    'roses_pinks_greens': {'Rose Quartz': 3, 'Strawberry Quartz': 3, 'Green Aventurine': 1, 'Moonstone': 1},
+
+    'owl': {'Amethyst': 5, 'Garnet': 1, 'Black Lava': 5, 'Lapiz Lazuli': 5, 'Red Jasper': 3},
+    'dolphin': {'Citrine': 2, 'Pyrite': 5, 'Green Aventurine': 3},
+    'butterfly': {'Lapiz lazuli': 5, 'Black Onyx': 3, 'Tiger eye': 3, 'Garnet': 1, 'Red Jasper': 3},
+    'wolf': {'Black Tourmaline': 3, 'Black Lava': 5, 'Pyrite': 5, 'Lapiz Lazuli': 3, 'Smoky Quartz': 3, 'Black Obsidian': 2, 'Tiger eye': 3, 'Garnet': 1, 'Red Jasper': 3}
 }
 
 @app.route('/')
@@ -59,4 +65,4 @@ def result():
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
